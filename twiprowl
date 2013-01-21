@@ -370,6 +370,18 @@ class TwiProwl
     end
   end
 
+  def exec( icon, params = {}, user = nil )
+    params[:exec] = @@conf['EXEC']['Command']
+    begin
+      info "Exec command..."
+      res = system( "#{params[:exec]}" )
+      debug "Command Response: #{res}"
+    rescue
+      error "Error while executing: #{$!}"
+    end
+  end
+
+
   def rate_limit_check( threshold, auth = true )
     return true if threshold == 0
     debug "Current RateLimit Remaining: #{@rate}"

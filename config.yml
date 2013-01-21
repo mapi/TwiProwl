@@ -14,6 +14,9 @@ NMA:
 Growl:
   Sticky: 0    # lowest priority to enable stikcy option
 
+EXEC:
+  Command: /usr/bin/aplay -B 100000 /usr/share/sounds/alsa/Front_Center.wav
+
 Accounts:
  -
   Application: "Twitter"
@@ -21,6 +24,7 @@ Accounts:
     - "prowl" # Prowl for iPhone
 #   - "nma"   # Notify My Android for Android
 #   - "growl" # use growlnotify, it requires growl.gem and growlnotify
+#   - "exec"  # execute command
   User: example_username
   RateLimitThreshold: 20
   UseProxy: false          # <= use Prowl::ProxyURL
